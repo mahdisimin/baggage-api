@@ -1,10 +1,12 @@
 import requests
 
-def fetch_data():
-    res = requests.get("https://httpbin.org/delay/2", timeout=(1, 5))
-    print(res.text)
+def fetch_data() -> str:
+    res = requests.get("https://httpbin.org/get", timeout=(1, 5))
+    txt = (res.text)
     print(res.headers)
+    return txt
 
 
 if __name__ == "__main__":
-    fetch_data()
+    txt = fetch_data()
+    print(txt)
